@@ -4,7 +4,9 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel';
 
 const images = Array.from({ length: 10 }, (_, index) => ({
   id: index + 1,
-  url: `https://picsum.photos/600/600?random=${index + 1}`,
+  url: `https://picsum.photos/600/900?random=${index + 1}`,
+  title: 'Hello this is text',
+  descrption: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Possimus, culpa!'
 }));
 
 const config = {
@@ -29,9 +31,14 @@ const config = {
   <div class="carousel__wrapper">
     <Carousel v-bind="config">
       <Slide v-for="image in images" :key="image.id">
-        <img :src="image.url" alt="image" />
+        <div class="carousel-item-wrapper">
+          <img :src="image.url" alt="image" class="carousel-image" />
+          <div class="overlay">
+            <div class="overlay-text">{{ image.title }}</div>
+            <div class="overlay-desc">{{ image.descrption }}</div>
+          </div>
+        </div>
       </Slide>
-
       <template #addons>
         <Navigation />
       </template>
@@ -45,5 +52,44 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.carousel-item-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  padding: 12px;
+}
+
+.overlay-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.overlay-desc {
+  color: white;
+  font-size: 0.9rem;
 }
 </style>

@@ -71,7 +71,7 @@ onMounted(() => {
           <VDatePicker view="weekly" borderless transparent title-position="left" is-dark="system" color="gray"
             v-model="date" :attributes='attrs' @dayclick="onDayClick" @did-move="onMoveWeek" />
           <div>
-            <div class="d-flex row gap-3 mt-4">
+            <div class="d-flex row gap-3 mt-5">
               <h4 class="fs-5 mb-0">Daftar Event {{ formatDate(date) }}</h4>
               <div v-if="events.length === 0" class="empty-state text-center py-4">
                 <p class="text-secondary">No events available for this date. Please select another date.</p>
@@ -87,9 +87,21 @@ onMounted(() => {
       </div>
 
       <div class="col">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo itaque facere laborum labore provident
-          cumque sequi deserunt molestias, odit qui dolorum perferendis, eaque doloribus? Voluptatum illum illo
-          temporibus sunt quidem!</p>
+        <div class="">
+          <img
+            src="https://www.jakarta.go.id/storage/files/shares/Amasukin Gambar/Event/2025/festivalharapan-istiqlal.jpg"
+            class="img-fluid" alt="">
+          <div class="mt-3">
+            <h4>Festival Harmoni Istiqlal</h4>
+            <p class="line-clamp-2">Festival Harmoni Istiqlal menampilkan dua pameran utama yang menarik, yaitu galeri
+              "Riwayat: Telusur
+              Budaya Islam di Nusantara" dan galeri "Imam Bukhari: Islamic Art". Festival yang memadukan seni,
+              teknologi, dan spiritualitas harmoni ini melibatkan lebih dari 50 seniman dari Indonesia, Uzbekistan,
+              Tajikistan, India, Tiongkok, dan lain-lain. Pemesanan tiket bisa dilakukan melalui</p>
+            <a href="https://goers.co/harmoniistiqlal" class="link">https://goers.co/harmoniistiqlal.</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

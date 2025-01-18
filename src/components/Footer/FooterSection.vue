@@ -38,7 +38,7 @@
 
           <div class="row mt-4">
             <div class="col">
-              <h2 class="h6 fw-bold mb-3">Ikuti Kami</h2>
+              <h2 class="h6 fw-bold mb-3 text-end">Ikuti Kami</h2>
               <div class="social-media-icons">
                 <img src="https://www.jakarta.go.id/images/icons/fb.png" alt="Facebook" class="social-icon" />
                 <img src="https://www.jakarta.go.id/images/icons/ftwitterx.png" alt="Twitter" class="social-icon" />

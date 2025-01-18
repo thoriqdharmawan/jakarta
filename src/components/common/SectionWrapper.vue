@@ -1,6 +1,6 @@
 <template>
   <section class="container mb-3">
-    <h2 class="mb-5 fs-2 fw-bold">{{ title }}</h2>
+    <h2 class="mb-3 fs-2 fw-bold">{{ title }}</h2>
 
     <slot></slot>
   </section>

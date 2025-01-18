@@ -1,3 +1,7 @@
+<script setup>
+import NavigationSection from './components/NavigationSection.vue';
+</script>
+
 <template>
-  <div>new</div>
+  <NavigationSection />
 </template>

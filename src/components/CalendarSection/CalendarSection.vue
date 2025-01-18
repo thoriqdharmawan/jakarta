@@ -6,51 +6,39 @@ import { getWeekNumber } from '@/utils/helpers';
 
 const date = ref(new Date());
 const reminders = ref([]);
-
 const attrs = ref([]);
 
-const fetchReminders = (date) => {
-  axios.get('http://localhost:3000/reminders', {
-    params: {
-      date
-    }
-  })
-    .then(response => {
-      reminders.value = response.data;
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
+const API_URL = 'http://localhost:3000/reminders';
+
+const fetchData = async (params, targetRef) => {
+  try {
+    const { data } = await axios.get(API_URL, { params });
+
+    targetRef.value = data?.map(item => ({
+      key: item?.id,
+      dot: true,
+      dates: item.date,
+    })) || [];
+
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
 };
 
-const fetchEventsByWeek = (week) => {
-  axios.get('http://localhost:3000/reminders', {
-    params: { week: week }
-  })
-    .then(response => {
-      attrs.value = response.data?.map((data) => ({
-        key: data?.id,
-        dot: true,
-        dates: data.date,
-      }))
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-}
+const fetchReminders = async (date) => {
+  try {
+    const { data } = await axios.get(API_URL, { params: { date } });
+    reminders.value = data;
 
-const onDayClick = (view) => {
-  fetchReminders(view.id)
-}
+  } catch (error) {
+    console.error('Error fetching reminders:', error);
+  }
+};
 
-const onMoveWeek = (month) => {
-  fetchEventsByWeek(month[0].week)
-}
+const onDayClick = (view) => fetchReminders(view.id);
+const onMoveWeek = (month) => fetchData({ week: month[0].week }, attrs);
 
-onMounted(() => {
-  fetchEventsByWeek(getWeekNumber(new Date()))
-})
-
+onMounted(() => fetchData({ week: getWeekNumber(new Date()) }, attrs));
 </script>
 
 <template>

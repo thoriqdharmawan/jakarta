@@ -5,12 +5,12 @@ import IconDot from '../icons/IconDot.vue';
 
 <template>
   <section class="container text-center mt-5">
-    <div class="row gap-5">
-      <div class="col">
+    <div class="row">
+      <div class="col-12 col-lg-6 px-4">
         <div class="text-start">
-
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Sukses_Jakarta_Untuk_Indonesia.png"
             alt="Sukses Jakarta Untuk Indonesia logo" class="img-fluid logo">
+
           <h1 class="title fw-bold">Jakarta Jati Diri Indonesia, Megapolitan Dunia</h1>
           <p class="desc">Kehidupan perkotaan yang semarak dengan berbagai keragaman, dari warisan budaya, inovasi tanpa
             henti, hingga destinasi kelas dunia yang memikat. Selamat datang!</p>
@@ -21,7 +21,7 @@ import IconDot from '../icons/IconDot.vue';
           <button class="btn btn-dark" type="button" id="button-addon2">Cari</button>
         </div>
       </div>
-      <div class="col">
+      <div class="col-12 col-lg-6 px-4">
         <div class="hero-wrapper">
           <img src="https://fk.ui.ac.id/iro/wp-content/uploads/2021/03/Jakarta.jpg"
             class="img-fluid rounded-4 hero-image" alt="Kota Jakarta">
@@ -45,6 +45,7 @@ import IconDot from '../icons/IconDot.vue';
 
 .desc {
   font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
 .hero-wrapper {
@@ -68,7 +69,7 @@ import IconDot from '../icons/IconDot.vue';
 .dot {
   position: absolute;
   right: -1rem;
-  bottom: -2rem;
+  top: 5rem;
 }
 
 .hero-wrapper:hover .hero-image {
@@ -77,5 +78,23 @@ import IconDot from '../icons/IconDot.vue';
 
 .hero-wrapper:hover::before {
   background: rgba(0, 0, 0, 0.6);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (max-width: 992px) {
+  .hero-image {
+    position: relative;
+    transform: translate(0rem, 0rem);
+    margin-top: 2rem;
+  }
+
+  .dot {
+    display: none;
+  }
 }
 </style>

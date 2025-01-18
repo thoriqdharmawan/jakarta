@@ -43,7 +43,7 @@ const fetchDataWithCache = async (targetRef, cacheKey) => {
     const { data } = await axios.get(API_URL);
 
     cache.set(cacheKey, data);
-    targetRef.value = data.map((d, idx) => ({ ...d, url: `https://picsum.photos/600/900?random=${idx + 1}`, }));
+    targetRef.value = data.map((d, idx) => ({ ...d, url: `https://picsum.photos/400/400?random=${idx + 1}`, }));
   } catch (error) {
     console.error('Error fetching data:', error);
   }

@@ -1,33 +1,70 @@
+<script setup>
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+import ItemEvent from './ItemEvent.vue';
+import { getWeekNumber } from '@/utils/helpers';
+
+const date = ref(new Date());
+const reminders = ref([]);
+
+const attrs = ref([]);
+
+const fetchReminders = (date) => {
+  axios.get('http://localhost:3000/reminders', {
+    params: {
+      date
+    }
+  })
+    .then(response => {
+      reminders.value = response.data;
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+};
+
+const fetchEventsByWeek = (week) => {
+  axios.get('http://localhost:3000/reminders', {
+    params: { week: week }
+  })
+    .then(response => {
+      attrs.value = response.data?.map((data) => ({
+        key: data?.id,
+        dot: true,
+        dates: data.date,
+      }))
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
+
+const onDayClick = (view) => {
+  fetchReminders(view.id)
+}
+
+const onMoveWeek = (month) => {
+  fetchEventsByWeek(month[0].week)
+}
+
+onMounted(() => {
+  fetchEventsByWeek(getWeekNumber(new Date()))
+})
+
+</script>
+
 <template>
   <section class="container mt-5 mb-5">
     <div class="row gap-4">
       <div class="col">
         <div class="p-3 mb-5 rounded">
-          <VDatePicker view="weekly" borderless transparent title-position="left" is-dark="system" color="gray" />
+          <VDatePicker view="weekly" borderless transparent title-position="left" is-dark="system" color="gray"
+            v-model="date" :attributes='attrs' @dayclick="onDayClick" @did-move="onMoveWeek" />
           <div>
             <h3 class="mb-3">Events</h3>
-
             <div class="d-flex row gap-3">
-              <div class="d-flex gap-3">
-                <img src="https://placehold.co/50" class="img-fluid rounded" alt="">
-                <div>
-                  <h4 class="fs-5 mb-0 fw-medium">Mom and dad's anniversary</h4>
-                  <span class="text-secondary">Sunday, 3:00 am</span>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="https://placehold.co/50" class="img-fluid rounded" alt="">
-                <div>
-                  <h4 class="fs-5 mb-0 fw-medium">Mom and dad's anniversary</h4>
-                  <span class="text-secondary">Sunday, 3:00 am</span>
-                </div>
-              </div>
-              <div class="d-flex gap-3">
-                <img src="https://placehold.co/50" class="img-fluid rounded" alt="">
-                <div>
-                  <h4 class="fs-5 mb-0 fw-medium">Mom and dad's anniversary</h4>
-                  <span class="text-secondary">Sunday, 3:00 am</span>
-                </div>
+              <div v-for="reminder in reminders" :key="reminder.id">
+                <ItemEvent :name="reminder.title" :time="reminder.time" />
               </div>
             </div>
           </div>

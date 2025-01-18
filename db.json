@@ -1,76 +1,100 @@
 {
-  "weeks": [
+  "reminders": [
     {
       "id": 1,
-      "weekNumber": 1,
-      "events": [
-        {
-          "day": "Monday",
-          "date": "2025-01-01",
-          "events": [
-            {
-              "id": 1,
-              "title": "Event 1 for Monday",
-              "description": "Description for Event 1"
-            },
-            {
-              "id": 2,
-              "title": "Event 2 for Monday",
-              "description": "Description for Event 2"
-            }
-          ]
-        },
-        {
-          "day": "Tuesday",
-          "date": "2025-01-02",
-          "events": [
-            {
-              "id": 3,
-              "title": "Event 1 for Tuesday",
-              "description": "Description for Event 1"
-            }
-          ]
-        },
-        {
-          "day": "Wednesday",
-          "date": "2025-01-03",
-          "events": [
-            {
-              "id": 4,
-              "title": "Event 1 for Wednesday",
-              "description": "Description for Event 1"
-            }
-          ]
-        }
-      ]
+      "title": "Mom and dad's anniversary",
+      "date": "2025-01-12",
+      "time": "3:00 am",
+      "icon": "heart",
+      "week": 3
     },
     {
       "id": 2,
-      "weekNumber": 2,
-      "events": [
-        {
-          "day": "Monday",
-          "date": "2025-01-08",
-          "events": [
-            {
-              "id": 5,
-              "title": "Event 1 for Monday in Week 2",
-              "description": "Description for Event 1"
-            }
-          ]
-        },
-        {
-          "day": "Friday",
-          "date": "2025-01-12",
-          "events": [
-            {
-              "id": 6,
-              "title": "Event 1 for Friday",
-              "description": "Description for Event 1"
-            }
-          ]
-        }
-      ]
+      "title": "Meeting with Jonas Stark",
+      "date": "2025-01-13",
+      "time": "9:30 am",
+      "icon": "meeting",
+      "week": 3
+    },
+    {
+      "id": 3,
+      "title": "Mia's birthday party",
+      "date": "2025-01-13",
+      "time": "12:00 pm",
+      "icon": "birthday-cake",
+      "week": 3
+    },
+    {
+      "id": 4,
+      "title": "Team meeting",
+      "date": "2025-01-16",
+      "time": "10:00 am",
+      "icon": "meeting",
+      "week": 3
+    },
+    {
+      "id": 5,
+      "title": "Doctor's appointment",
+      "date": "2025-01-16",
+      "time": "2:30 pm",
+      "icon": "doctor",
+      "week": 3
+    },
+    {
+      "id": 6,
+      "title": "Lunch with friends",
+      "date": "2025-01-16",
+      "time": "1:00 pm",
+      "icon": "lunch",
+      "week": 3
+    },
+    {
+      "id": 7,
+      "title": "Meeting with client X",
+      "date": "2025-01-18",
+      "time": "4:00 pm",
+      "icon": "meeting",
+      "week": 3
+    },
+    {
+      "id": 8,
+      "title": "Birthday celebration",
+      "date": "2025-01-19",
+      "time": "5:00 pm",
+      "icon": "birthday-cake",
+      "week": 4
+    },
+    {
+      "id": 9,
+      "title": "Movie night",
+      "date": "2025-01-20",
+      "time": "7:30 pm",
+      "icon": "film",
+      "week": 4
+    },
+    {
+      "id": 10,
+      "title": "Yoga class",
+      "date": "2025-01-21",
+      "time": "8:00 am",
+      "icon": "yoga",
+      "week": 4
+    },
+    {
+      "id": 11,
+      "title": "Workshops with team",
+      "date": "2025-01-22",
+      "time": "9:00 am",
+      "icon": "workshop",
+      "week": 4
+    },
+    {
+      "id": 12,
+      "title": "Vacation planning",
+      "date": "2025-01-23",
+      "time": "6:00 pm",
+      "icon": "beach",
+      "week": 4
     }
   ]
 }

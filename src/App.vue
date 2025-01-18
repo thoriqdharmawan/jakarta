@@ -2,6 +2,7 @@
 import CalendarSection from './components/CalendarSection.vue';
 import HeroSection from './components/HeroSection.vue';
 import NavigationSection from './components/NavigationSection.vue';
+import NewsSection from './components/NewsSection.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import NavigationSection from './components/NavigationSection.vue';
 
   <main>
     <HeroSection />
+    <NewsSection />
     <CalendarSection />
   </main>
 </template>

@@ -1,4 +1,5 @@
 <script setup>
+import CalendarSection from './components/CalendarSection.vue';
 import HeroSection from './components/HeroSection.vue';
 import NavigationSection from './components/NavigationSection.vue';
 </script>
@@ -10,5 +11,6 @@ import NavigationSection from './components/NavigationSection.vue';
 
   <main>
     <HeroSection />
+    <CalendarSection />
   </main>
 </template>

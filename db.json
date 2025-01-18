@@ -1,0 +1,76 @@
+{
+  "weeks": [
+    {
+      "id": 1,
+      "weekNumber": 1,
+      "events": [
+        {
+          "day": "Monday",
+          "date": "2025-01-01",
+          "events": [
+            {
+              "id": 1,
+              "title": "Event 1 for Monday",
+              "description": "Description for Event 1"
+            },
+            {
+              "id": 2,
+              "title": "Event 2 for Monday",
+              "description": "Description for Event 2"
+            }
+          ]
+        },
+        {
+          "day": "Tuesday",
+          "date": "2025-01-02",
+          "events": [
+            {
+              "id": 3,
+              "title": "Event 1 for Tuesday",
+              "description": "Description for Event 1"
+            }
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "date": "2025-01-03",
+          "events": [
+            {
+              "id": 4,
+              "title": "Event 1 for Wednesday",
+              "description": "Description for Event 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "weekNumber": 2,
+      "events": [
+        {
+          "day": "Monday",
+          "date": "2025-01-08",
+          "events": [
+            {
+              "id": 5,
+              "title": "Event 1 for Monday in Week 2",
+              "description": "Description for Event 1"
+            }
+          ]
+        },
+        {
+          "day": "Friday",
+          "date": "2025-01-12",
+          "events": [
+            {
+              "id": 6,
+              "title": "Event 1 for Friday",
+              "description": "Description for Event 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

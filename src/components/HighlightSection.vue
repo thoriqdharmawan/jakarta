@@ -42,7 +42,7 @@ const config = {
         </div>
       </div>
       <div class="col">
-        <h2>News Section</h2>
+        <h2>HighlightSection</h2>
       </div>
 
     </div>

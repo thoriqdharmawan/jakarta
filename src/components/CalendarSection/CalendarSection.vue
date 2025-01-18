@@ -65,9 +65,9 @@ onMounted(() => {
 <template>
   <section class="container mt-5 mb-5">
     <h3 class="mb-3">Events</h3>
-    <div class="row gap-4 event-wrapper">
+    <div class="row gap-4 event-wrapper mb-5">
       <div class="col">
-        <div class="p-3 mb-5 rounded">
+        <div class="p-3 rounded">
           <VDatePicker view="weekly" borderless transparent title-position="left" is-dark="system" color="gray"
             v-model="date" :attributes='attrs' @dayclick="onDayClick" @did-move="onMoveWeek" />
           <div>
@@ -87,7 +87,7 @@ onMounted(() => {
       </div>
 
       <div class="col">
-        <div class="">
+        <div>
           <img
             src="https://www.jakarta.go.id/storage/files/shares/Amasukin Gambar/Event/2025/festivalharapan-istiqlal.jpg"
             class="img-fluid" alt="">

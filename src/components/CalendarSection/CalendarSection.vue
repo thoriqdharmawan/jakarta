@@ -2,13 +2,13 @@
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
 import ItemEvent from './ItemEvent.vue';
-import { getWeekNumber } from '@/utils/helpers';
+import { formatDate, getWeekNumber } from '@/utils/helpers';
 
 const date = ref(new Date());
-const reminders = ref([]);
+const events = ref([]);
 const attrs = ref([]);
 
-const API_URL = 'http://localhost:3000/reminders';
+const API_URL = 'http://localhost:3000/events';
 
 const cache = new Map();
 
@@ -33,23 +33,23 @@ const fetchDataWithCache = async (params, targetRef, cacheKey) => {
   }
 };
 
-const fetchRemindersWithCache = async (date) => {
-  const cacheKey = `reminders-${date}`;
+const fetchEventsWithCache = async (date) => {
+  const cacheKey = `events-${date}`;
   if (cache.has(cacheKey)) {
-    reminders.value = cache.get(cacheKey);
+    events.value = cache.get(cacheKey)
     return;
   }
 
   try {
     const { data } = await axios.get(API_URL, { params: { date } });
     cache.set(cacheKey, data);
-    reminders.value = data;
+    events.value = data;
   } catch (error) {
-    console.error('Error fetching reminders:', error);
+    console.error('Error fetching Events:', error);
   }
 };
 
-const onDayClick = (view) => fetchRemindersWithCache(view.id);
+const onDayClick = (view) => fetchEventsWithCache(view.id);
 const onMoveWeek = (month) => {
   const week = month[0].week;
   fetchDataWithCache({ week }, attrs, `events-week-${week}`);
@@ -58,22 +58,29 @@ const onMoveWeek = (month) => {
 onMounted(() => {
   const currentWeek = getWeekNumber(new Date());
   fetchDataWithCache({ week: currentWeek }, attrs, `events-week-${currentWeek}`);
+  fetchEventsWithCache(new Date().toISOString().split('T')[0]);
 });
 </script>
 
 <template>
   <section class="container mt-5 mb-5">
-    <div class="row gap-4">
+    <h3 class="mb-3">Events</h3>
+    <div class="row gap-4 event-wrapper">
       <div class="col">
         <div class="p-3 mb-5 rounded">
           <VDatePicker view="weekly" borderless transparent title-position="left" is-dark="system" color="gray"
             v-model="date" :attributes='attrs' @dayclick="onDayClick" @did-move="onMoveWeek" />
           <div>
-            <h3 class="mb-3">Events</h3>
-            <div class="d-flex row gap-3">
-              <div v-for="reminder in reminders" :key="reminder.id">
-                <ItemEvent :name="reminder.title" :time="reminder.time" />
+            <div class="d-flex row gap-3 mt-4">
+              <h4 class="fs-5 mb-0">Daftar Event {{ formatDate(date) }}</h4>
+              <div v-if="events.length === 0" class="empty-state text-center py-4">
+                <p class="text-secondary">No events available for this date. Please select another date.</p>
               </div>
+
+              <div v-for="event in events" :key="event.id">
+                <ItemEvent :name="event.title" :time="event.time" :id="event.id" />
+              </div>
+
             </div>
           </div>
         </div>
@@ -89,6 +96,10 @@ onMounted(() => {
 </template>
 
 <style>
+.event-wrapper {
+  min-height: 220px;
+}
+
 .vc-container.vc-weekly {
   width: 100%;
 }
@@ -100,5 +111,22 @@ onMounted(() => {
 
 .calendar-container {
   max-width: 600px;
+}
+
+
+.empty-state {
+  border: 1px dashed #ddd;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: #888;
+  margin: 0px;
 }
 </style>

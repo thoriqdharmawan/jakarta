@@ -1,99 +1,163 @@
 {
-  "reminders": [
+  "events": [
     {
       "id": 1,
-      "title": "Mom and dad's anniversary",
+      "title": "Rapat Koordinasi Bulanan",
       "date": "2025-01-12",
-      "time": "3:00 am",
-      "icon": "heart",
-      "week": 3
-    },
-    {
-      "id": 2,
-      "title": "Meeting with Jonas Stark",
-      "date": "2025-01-13",
-      "time": "9:30 am",
+      "time": "09:00 am",
       "icon": "meeting",
       "week": 3
     },
     {
+      "id": 2,
+      "title": "Sosialisasi Program Pemerintah",
+      "date": "2025-01-12",
+      "time": "02:00 pm",
+      "icon": "presentation",
+      "week": 3
+    },
+    {
       "id": 3,
-      "title": "Mia's birthday party",
+      "title": "Diskusi Panel Kebijakan",
       "date": "2025-01-13",
-      "time": "12:00 pm",
-      "icon": "birthday-cake",
+      "time": "10:00 am",
+      "icon": "discussion",
       "week": 3
     },
     {
       "id": 4,
-      "title": "Team meeting",
-      "date": "2025-01-16",
-      "time": "10:00 am",
+      "title": "Rapat Internal Tim Proyek",
+      "date": "2025-01-13",
+      "time": "03:00 pm",
       "icon": "meeting",
       "week": 3
     },
     {
       "id": 5,
-      "title": "Doctor's appointment",
-      "date": "2025-01-16",
-      "time": "2:30 pm",
-      "icon": "doctor",
+      "title": "Pengarahan Kepala Dinas",
+      "date": "2025-01-14",
+      "time": "08:00 am",
+      "icon": "briefing",
       "week": 3
     },
     {
       "id": 6,
-      "title": "Lunch with friends",
-      "date": "2025-01-16",
-      "time": "1:00 pm",
-      "icon": "lunch",
+      "title": "Pemantauan Proyek Lapangan",
+      "date": "2025-01-14",
+      "time": "01:00 pm",
+      "icon": "field-work",
       "week": 3
     },
     {
       "id": 7,
-      "title": "Meeting with client X",
-      "date": "2025-01-18",
-      "time": "4:00 pm",
-      "icon": "meeting",
+      "title": "Seminar Nasional Pendidikan",
+      "date": "2025-01-15",
+      "time": "09:00 am",
+      "icon": "seminar",
       "week": 3
     },
     {
       "id": 8,
-      "title": "Birthday celebration",
-      "date": "2025-01-19",
-      "time": "5:00 pm",
-      "icon": "birthday-cake",
-      "week": 4
+      "title": "Workshop Strategi Digital",
+      "date": "2025-01-15",
+      "time": "02:00 pm",
+      "icon": "workshop",
+      "week": 3
     },
     {
       "id": 9,
-      "title": "Movie night",
-      "date": "2025-01-20",
-      "time": "7:30 pm",
-      "icon": "film",
-      "week": 4
+      "title": "Rapat Evaluasi Mingguan",
+      "date": "2025-01-16",
+      "time": "10:00 am",
+      "icon": "evaluation",
+      "week": 3
     },
     {
       "id": 10,
-      "title": "Yoga class",
-      "date": "2025-01-21",
-      "time": "8:00 am",
-      "icon": "yoga",
-      "week": 4
+      "title": "Audiensi dengan Stakeholder",
+      "date": "2025-01-16",
+      "time": "02:00 pm",
+      "icon": "audience",
+      "week": 3
     },
     {
       "id": 11,
-      "title": "Workshops with team",
-      "date": "2025-01-22",
-      "time": "9:00 am",
-      "icon": "workshop",
-      "week": 4
+      "title": "Laporan Kinerja Proyek",
+      "date": "2025-01-16",
+      "time": "04:00 pm",
+      "icon": "report",
+      "week": 3
     },
     {
       "id": 12,
-      "title": "Vacation planning",
+      "title": "Pelatihan Kepegawaian",
+      "date": "2025-01-18",
+      "time": "09:00 am",
+      "icon": "training",
+      "week": 3
+    },
+    {
+      "id": 13,
+      "title": "Penandatanganan MoU",
+      "date": "2025-01-18",
+      "time": "01:00 pm",
+      "icon": "contract",
+      "week": 3
+    },
+    {
+      "id": 14,
+      "title": "Simulasi Kebencanaan",
+      "date": "2025-01-19",
+      "time": "08:00 am",
+      "icon": "simulation",
+      "week": 4
+    },
+    {
+      "id": 15,
+      "title": "Apel Pagi Khusus",
+      "date": "2025-01-19",
+      "time": "07:30 am",
+      "icon": "morning-assembly",
+      "week": 4
+    },
+    {
+      "id": 16,
+      "title": "Diskusi Interaktif Lintas Sektor",
+      "date": "2025-01-20",
+      "time": "01:00 pm",
+      "icon": "interactive-discussion",
+      "week": 4
+    },
+    {
+      "id": 17,
+      "title": "Pemaparan Rencana Anggaran",
+      "date": "2025-01-21",
+      "time": "11:00 am",
+      "icon": "budget-presentation",
+      "week": 4
+    },
+    {
+      "id": 18,
+      "title": "Pembukaan Musyawarah Daerah",
+      "date": "2025-01-22",
+      "time": "09:00 am",
+      "icon": "regional-meeting",
+      "week": 4
+    },
+    {
+      "id": 19,
+      "title": "Kunjungan Kerja Lapangan",
       "date": "2025-01-23",
-      "time": "6:00 pm",
-      "icon": "beach",
+      "time": "01:00 pm",
+      "icon": "field-visit",
+      "week": 4
+    },
+    {
+      "id": 20,
+      "title": "Forum Konsultasi Publik",
+      "date": "2025-01-24",
+      "time": "10:00 am",
+      "icon": "public-consultation",
       "week": 4
     }
   ]

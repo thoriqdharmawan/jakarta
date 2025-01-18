@@ -43,6 +43,21 @@ To get started with the project, follow these steps:
    yarn
    ```
 
+## Run the Project
+
+To start the development server and mock API, run the following command:
+
+1. **Clone the repository**:
+
+   ```bash
+   yarn dev
+   ```
+
+   This will start the Vite development server and json-server in parallel. Once the command runs successfully, the project will be accessible at:
+
+   - Frontend (Vite server): http://localhost:5173
+   - Mock API (json-server): http://localhost:3000
+
 ## Available Scripts
 
 In the project directory, you can run the following scripts:

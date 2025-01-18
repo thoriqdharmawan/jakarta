@@ -1,11 +1,12 @@
-<script setup lang="ts">
+<script setup>
 import HighlightCarousel from './HighlightCarousel.vue';
-
 </script>
 
 <template>
   <div class="container mt-5 mb-5">
-    <div class="row">
+
+    <HighlightCarousel />
+    <!-- <div class="row">
       <div class="col">
         <HighlightCarousel />
       </div>
@@ -13,7 +14,7 @@ import HighlightCarousel from './HighlightCarousel.vue';
         <h2>HighlightSection</h2>
       </div>
 
-    </div>
+    </div> -->
   </div>
 
 </template>

@@ -1,13 +1,9 @@
 <script setup>
 import 'vue3-carousel/dist/carousel.css';
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
-
-const images = Array.from({ length: 10 }, (_, index) => ({
-  id: index + 1,
-  url: `https://picsum.photos/600/900?random=${index + 1}`,
-  title: 'Hello this is text',
-  descrption: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Possimus, culpa!'
-}));
+import SectionWrapper from '../common/SectionWrapper.vue';
 
 const config = {
   autoplay: 4000,
@@ -23,26 +19,59 @@ const config = {
       itemsToShow: 2,
       snapAlign: 'center',
     },
+    600: {
+      itemsToShow: 3,
+      snapAlign: 'center',
+    },
   },
 };
+
+
+const highlights = ref([]);
+
+const API_URL = 'http://localhost:3000/hightlights';
+
+const cache = new Map();
+
+const fetchDataWithCache = async (targetRef, cacheKey) => {
+  if (cache.has(cacheKey)) {
+    targetRef.value = cache.get(cacheKey);
+    return;
+  }
+
+  try {
+    const { data } = await axios.get(API_URL);
+
+    cache.set(cacheKey, data);
+    targetRef.value = data.map((d, idx) => ({ ...d, url: `https://picsum.photos/600/900?random=${idx + 1}`, }));
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+onMounted(() => {
+  fetchDataWithCache(highlights, "highlights");
+});
 </script>
 
 <template>
   <div class="carousel__wrapper">
-    <Carousel v-bind="config">
-      <Slide v-for="image in images" :key="image.id">
-        <div class="carousel-item-wrapper">
-          <img :src="image.url" alt="image" class="carousel-image" />
-          <div class="overlay">
-            <div class="overlay-text">{{ image.title }}</div>
-            <div class="overlay-desc">{{ image.descrption }}</div>
+    <SectionWrapper title="Highlights">
+      <Carousel v-bind="config">
+        <Slide v-for="hightlight in highlights" :key="hightlight.id">
+          <div class="carousel-item-wrapper">
+            <img :src="hightlight.url" alt="image" class="carousel-image" />
+            <div class="overlay">
+              <div class="overlay-text line-clamp-2">{{ hightlight.title }}</div>
+              <div class="overlay-desc line-clamp-3">{{ hightlight.description }}</div>
+            </div>
           </div>
-        </div>
-      </Slide>
-      <template #addons>
-        <Navigation />
-      </template>
-    </Carousel>
+        </Slide>
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+    </SectionWrapper>
   </div>
 </template>
 
@@ -78,18 +107,19 @@ img {
   flex-direction: column;
   justify-content: end;
   align-items: start;
-  padding: 12px;
+  padding: 24px;
+  user-select: none;
 }
 
 .overlay-text {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
-  text-align: center;
+  margin-bottom: 16px;
 }
 
 .overlay-desc {
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 </style>

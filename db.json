@@ -160,5 +160,52 @@
       "icon": "public-consultation",
       "week": 4
     }
+  ],
+  "hightlights": [
+    {
+      "id": 1,
+      "title": "Surat Pemberitahuan Rencana Pembangunan Normalisasi Kali Ciliwung",
+      "description": "Sehubungan dengan rencana Normalisasi Kali Ciliwung di Kelurahan Cawang dan Kelurahan Cililitan, Kecamatan Kramat Jati, Kota Administrasi Jakarta Timur, Provinsi DKI Jakarta, bersama ini diberitahukan hal-hal sebagai berikut:"
+    },
+    {
+      "id": 2,
+      "title": "Pengumuman Penetapan Lokasi Pembangunan Jalan Tol BECAK KAYU",
+      "description": "Berdasarkan Keputusan Gubernur Nomor 53 Tahun 2025 tentang Penetapan Lokasi Pembangunan Jalan Tol Bekasi-Cawang-Kampung Melayu di Provinsi Daerah Khusus Ibukota Jakarta, yang telah ditetapkan pada tanggal 13 Januari 2025, dengan ini disampaikan hal-hal sebagai berikut:"
+    },
+    {
+      "id": 3,
+      "title": "Pengumuman Penetapan Lokasi Pembangunan Jalur, Stasiun, dan Fasilitas Proyek Kereta Cepat Jakarta-Bandung",
+      "description": "Berdasarkan Keputusan Gubernur 52 Tahun 2025 tentang Penetapan Lokasi Pembangunan Jalur, Stasiun, Dan Fasilitas Proyek Kereta Cepat Jakarta-Bandung Di Kelurahan Cipinang Melayu, Kecamatan Makasar, Kota Administrasi Jakarta Timur sebagaimana telah ditetapkan pada tanggal 13 Januari 2025, dengan ini disampaikan sebagai berikut:"
+    },
+    {
+      "id": 4,
+      "title": "Bentang Harapan Menuju 5 Abad Jakarta",
+      "description": "Sebuah kain putih sepanjang 500 meter disiapkan untuk warga Jakarta menuliskan harapan mereka terhadap Kota Jakarta menjelang usia 500 tahun. Kain tersebut disebar ke beberapa titik di Jakarta. Selain dalam bentuk fisik, Bentang Harapan juga disiapkan dalam bentuk platform digital dan warga Jakarta bisa mengunggah aspirasi dan harapan mereka di platform tersebut."
+    },
+    {
+      "id": 5,
+      "title": "Trotoar Ramah Pejalan Kaki",
+      "description": "Bulan Trotoar hadir sebagai wujud nyata komitmen Pemerintah Provinsi DKI Jakarta dalam menciptakan kota yang ramah pejalan kaki. Program ini didasarkan pada Peraturan Daerah Nomor 8 Tahun 2007 tentang Ketertiban Umum, yang menegaskan bahwa trotoar harus digunakan sesuai fungsinya sebagai jalur pejalan kaki. Melalui Bulan Tertib Trotoar, Pemprov DKI Jakarta berupaya menciptakan lingkungan yang aman dan nyaman bagi pejalan kaki, serta meningkatkan kesadaran masyarakat akan pentingnya menjaga ketertiban di ruang publik."
+    },
+    {
+      "id": 6,
+      "title": "Kanal Informasi Siaga Banjir Jakarta",
+      "description": "Pemprov DKI Jakarta menyediakan kanal informasi terintegrasi yang diperbarui secara berkala untuk memantau potensi hujan dan banjir. Informasi yang tersedia mencakup pantauan banjir Jakarta, prakiraan cuaca, serta kanal pengaduan terkait genangan atau banjir."
+    },
+    {
+      "id": 7,
+      "title": "Mahasiswa Menciptakan Kembali Kota",
+      "description": "Jakarta berkomitmen untuk mewujudkan masa depan yang berkelanjutan dan adil. Itulah sebabnya kami bergabung dengan kompetisi @C40Cities Students #ReinventingCities, bersama sembilan kota global lainnya."
+    },
+    {
+      "id": 8,
+      "title": "Layanan Informasi Publik Khusus Disabilitas Pemprov DKI Jakarta",
+      "description": "Pemerintah Provinsi DKI Jakarta melalui Dinas Komunikasi, Informatika dan Statistik (Diskominfotik) Provinsi DKI Jakarta menghadirkan landing page (laman landas) portal khusus disabilitas yang menyajikan layanan informasi publik secara inklusif. Terdapat delapan menu informasi layanan khusus disabilitas dan fitur aksesibilitas yang diharapkan dapat membantu setiap warga, khususnya rekan-rekan disabilitas di Jakarta, dalam memperoleh informasi publik."
+    },
+    {
+      "id": 9,
+      "title": "Fasilitas Parkir Khusus Disabilitas",
+      "description": "Dalam upaya menciptakan kota yang inklusif, Pemerintah Provinsi DKI Jakarta terus berkomitmen menyediakan fasilitas yang menunjang mobilitas kelompok difabel atau disabilitas. Salah satu wujud nyata dari komitmen ini adalah penyediaan lahan parkir khusus bagi penyandang disabilitas di berbagai titik strategis di Jakarta, termasuk area publik, fasilitas transportasi umum, pusat perbelanjaan, dan gedung perkantoran."
+    }
   ]
 }

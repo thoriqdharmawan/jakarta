@@ -10,35 +10,55 @@ const attrs = ref([]);
 
 const API_URL = 'http://localhost:3000/reminders';
 
-const fetchData = async (params, targetRef) => {
+const cache = new Map();
+
+const fetchDataWithCache = async (params, targetRef, cacheKey) => {
+  if (cache.has(cacheKey)) {
+    targetRef.value = cache.get(cacheKey);
+    return;
+  }
+
   try {
     const { data } = await axios.get(API_URL, { params });
-
-    targetRef.value = data?.map(item => ({
+    const formattedData = data?.map(item => ({
       key: item?.id,
       dot: true,
       dates: item.date,
     })) || [];
 
+    cache.set(cacheKey, formattedData);
+    targetRef.value = formattedData;
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 };
 
-const fetchReminders = async (date) => {
+const fetchRemindersWithCache = async (date) => {
+  const cacheKey = `reminders-${date}`;
+  if (cache.has(cacheKey)) {
+    reminders.value = cache.get(cacheKey);
+    return;
+  }
+
   try {
     const { data } = await axios.get(API_URL, { params: { date } });
+    cache.set(cacheKey, data);
     reminders.value = data;
-
   } catch (error) {
     console.error('Error fetching reminders:', error);
   }
 };
 
-const onDayClick = (view) => fetchReminders(view.id);
-const onMoveWeek = (month) => fetchData({ week: month[0].week }, attrs);
+const onDayClick = (view) => fetchRemindersWithCache(view.id);
+const onMoveWeek = (month) => {
+  const week = month[0].week;
+  fetchDataWithCache({ week }, attrs, `events-week-${week}`);
+};
 
-onMounted(() => fetchData({ week: getWeekNumber(new Date()) }, attrs));
+onMounted(() => {
+  const currentWeek = getWeekNumber(new Date());
+  fetchDataWithCache({ week: currentWeek }, attrs, `events-week-${currentWeek}`);
+});
 </script>
 
 <template>

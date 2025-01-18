@@ -4,6 +4,7 @@ import { onMounted, ref } from 'vue';
 import axios from 'axios';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import SectionWrapper from '../common/SectionWrapper.vue';
+import jakartaImage from '@/assets/jakarta.jpg';
 
 const config = {
   autoplay: 4000,
@@ -43,7 +44,7 @@ const fetchDataWithCache = async (targetRef, cacheKey) => {
     const { data } = await axios.get(API_URL);
 
     cache.set(cacheKey, data);
-    targetRef.value = data.map((d, idx) => ({ ...d, url: `https://picsum.photos/400/400?random=${idx + 1}`, }));
+    targetRef.value = data
   } catch (error) {
     console.error('Error fetching data:', error);
   }
@@ -60,7 +61,7 @@ onMounted(() => {
       <Carousel v-bind="config">
         <Slide v-for="hightlight in highlights" :key="hightlight.id">
           <div class="carousel-item-wrapper">
-            <img :src="hightlight.url" alt="image" class="carousel-image" />
+            <img :src="jakartaImage" alt="image" class="carousel-image" />
             <div class="overlay">
               <div class="overlay-text line-clamp-2">{{ hightlight.title }}</div>
               <div class="overlay-desc line-clamp-3">{{ hightlight.description }}</div>

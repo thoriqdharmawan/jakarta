@@ -1,4 +1,6 @@
 <script>
+import suksesImage from '@/assets/sukses.png';
+
 export default {
   props: {
     id: {
@@ -14,15 +16,27 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      suksesImage
+    };
+  },
 };
 </script>
 
 <template>
   <div class="d-flex gap-3 align-items-center">
-    <img :src="`https://picsum.photos/50/50?random=${id}`" class="img-fluid rounded" :alt="`Icon for event: ${name}`" />
+    <img :src="suksesImage" class="img-fluid rounded" :alt="`Icon for event: ${name}`" />
     <div>
       <h4 class="fs-5 mb-0 fw-medium">{{ name || 'Unknown Event' }}</h4>
       <span class="text-secondary">{{ time || 'Time not specified' }}</span>
     </div>
   </div>
 </template>
+
+<style scoped>
+img {
+  width: 50px;
+  height: 50px;
+}
+</style>

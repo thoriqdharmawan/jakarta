@@ -1,6 +1,18 @@
-<script setup lang="ts">
+<script>
 import IconDot from '../icons/IconDot.vue';
+import jakartaImage from '@/assets/jakarta.jpg';
+import suksesImage from '@/assets/sukses.png';
 
+
+export default {
+  data() {
+    return {
+      jakartaImage,
+      suksesImage,
+      IconDot,
+    };
+  },
+};
 </script>
 
 <template>
@@ -8,8 +20,7 @@ import IconDot from '../icons/IconDot.vue';
     <div class="row">
       <div class="col-12 col-lg-6 px-4">
         <div class="text-start">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Sukses_Jakarta_Untuk_Indonesia.png"
-            alt="Sukses Jakarta Untuk Indonesia logo" class="img-fluid logo">
+          <img :src="suksesImage" alt="Sukses Jakarta Untuk Indonesia logo" class="img-fluid logo">
 
           <h1 class="title fw-bold">Jakarta Jati Diri Indonesia, Megapolitan Dunia</h1>
           <p class="desc">Kehidupan perkotaan yang semarak dengan berbagai keragaman, dari warisan budaya, inovasi tanpa
@@ -23,8 +34,7 @@ import IconDot from '../icons/IconDot.vue';
       </div>
       <div class="col-12 col-lg-6 px-4">
         <div class="hero-wrapper">
-          <img src="https://fk.ui.ac.id/iro/wp-content/uploads/2021/03/Jakarta.jpg"
-            class="img-fluid rounded-4 hero-image" alt="Kota Jakarta">
+          <img :src="jakartaImage" class="img-fluid rounded-4 hero-image" alt="Kota Jakarta">
 
           <IconDot class="dot img-fluid" />
         </div>

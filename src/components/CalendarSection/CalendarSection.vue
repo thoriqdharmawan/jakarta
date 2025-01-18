@@ -68,8 +68,8 @@ onMounted(() => {
     <div class="row gap-4 event-wrapper mb-5">
       <div class="col">
         <div class="p-3 rounded">
-          <VDatePicker view="weekly" borderless transparent title-position="left" is-dark="system" color="gray"
-            v-model="date" :attributes='attrs' @dayclick="onDayClick" @did-move="onMoveWeek" />
+          <VDatePicker view="weekly" borderless transparent title-position="left" color="gray" v-model="date"
+            :attributes='attrs' @dayclick="onDayClick" @did-move="onMoveWeek" />
           <div>
             <div class="d-flex row gap-3 mt-5">
               <h4 class="fs-5 mb-0">Daftar Event {{ formatDate(date) }}</h4>
